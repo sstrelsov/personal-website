@@ -1,18 +1,25 @@
 ---
-// TypeScript frontmatter works here
-import headshot from '../assets/strelsov-headshot.png';
+import { Image } from "@heroui/react";
+import headshot from "../assets/strelsov-headshot.png";
+import "../styles/global.css"; // Import global styles
 const greeting = "Hello World";
 ---
 
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{greeting}</title>
   </head>
-  <body>
-    <h1>{greeting}</h1>
-  <img src={headshot.src} alt="Strelsov headshot" />
+  <body class="flex flex-col items-center justify-center h-full w-full m-0 p-0">
+    <h1 class="text-4xl mb-4">{greeting}</h1>
+    <Image
+      client:visible
+      isBlurred
+      width={300}
+      src={headshot.src}
+      alt="Strelsov headshot"
+    />
   </body>
 </html>
